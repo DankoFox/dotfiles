@@ -12,7 +12,7 @@ M.general = {
     ["<C-V>"] = {'"+p',"paste"},
   },
   i = {
-    -- save 
+    -- save
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
     -- ["<C-C>"] = {'"+y',"copy"},
     -- ["<C-V>"] = {"+p","paste"},

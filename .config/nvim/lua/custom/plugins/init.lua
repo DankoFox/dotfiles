@@ -1,5 +1,11 @@
 return {
-  ["goolord/alpha-nvim"] = { disable = false },
+  ["goolord/alpha-nvim"] = {
+    disable = false,
+    config = function ()
+      require("plugins.configs.alpha")
+      require("custom.plugins.alpha")
+    end
+  },
 
   ["NvChad/ui"] = {
     override_options = {
