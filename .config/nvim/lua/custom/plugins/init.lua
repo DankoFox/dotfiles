@@ -44,4 +44,11 @@ return {
       require("tailwindcss-colors").setup()
     end,
   },
+  ["NvChad/nvterm"] = {
+    config = function ()
+      require "plugins.configs.nvterm"
+      require "custom.plugins.nvterm"
+    end,
+  }
 }
+

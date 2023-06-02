@@ -32,7 +32,7 @@ M.general = {
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
 
     -- Copy all
-    --["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
+    ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
 
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "toggle line number" },

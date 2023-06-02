@@ -21,8 +21,6 @@ M.on_attach = function(client, bufnr)
   if client.server_capabilities.signatureHelpProvider then
     require("nvchad_ui.signature").setup(client)
   end
-
-  require("tailwindcss-colors").buf_attach(bufnr)
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -45,7 +43,7 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 

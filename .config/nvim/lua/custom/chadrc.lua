@@ -5,7 +5,7 @@ local M = {}
 -- non plugin ui configs, available without any plugins
 M.ui = {
   theme = "catppuccin",
-  theme_toggle = {'catppuccin','gruvbox_material','nord'},
+  theme_toggle = {'catppuccin','nord'},
   transparency = true,
 }
 
