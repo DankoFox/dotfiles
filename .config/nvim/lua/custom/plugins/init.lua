@@ -38,12 +38,12 @@ return {
     end,
   },
 
-  ["themaxmarchuk/tailwindcss-colors.nvim"] = {
-    module = "tailwindcss-colors",
-    config = function()
-      require("tailwindcss-colors").setup()
-    end,
-  },
+  -- ["themaxmarchuk/tailwindcss-colors.nvim"] = {
+  --   module = "tailwindcss-colors",
+  --   config = function()
+  --     require("tailwindcss-colors").setup()
+  --   end,
+  -- },
   ["NvChad/nvterm"] = {
     config = function ()
       require "plugins.configs.nvterm"
