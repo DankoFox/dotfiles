@@ -1,15 +1,16 @@
 return {
   ["goolord/alpha-nvim"] = {
     disable = false,
-    config = function ()
-      require("plugins.configs.alpha")
-      require("custom.plugins.alpha")
-    end
+    config = function()
+      require "plugins.configs.alpha"
+      require "custom.plugins.alpha"
+    end,
   },
 
   ["NvChad/ui"] = {
     override_options = {
       statusline = {
+        theme = "vscode_colored",
         separator_style = "round",
       },
     },
@@ -45,10 +46,9 @@ return {
   --   end,
   -- },
   ["NvChad/nvterm"] = {
-    config = function ()
+    config = function()
       require "plugins.configs.nvterm"
       require "custom.plugins.nvterm"
     end,
-  }
+  },
 }
-

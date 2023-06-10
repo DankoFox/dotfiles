@@ -24,7 +24,7 @@ local options = {
     adaptive_size = true,
     side = "left",
     width = 25,
-    -- hide_root_folder = true,
+    hide_root_folder = true,
   },
   git = {
     enable = false,
@@ -41,7 +41,6 @@ local options = {
   renderer = {
     highlight_git = false,
     highlight_opened_files = "none",
-    root_folder_label = false,
 
     indent_markers = {
       enable = false,

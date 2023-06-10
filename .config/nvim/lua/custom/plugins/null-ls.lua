@@ -28,6 +28,7 @@ local sources = {
 
   -- C++
   b.diagnostics.cpplint,
+  b.formatting.clang_format,
 }
 
 null_ls.setup {

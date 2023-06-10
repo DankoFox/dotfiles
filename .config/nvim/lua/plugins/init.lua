@@ -1,5 +1,4 @@
 local plugins = {
-
   ["nvim-lua/plenary.nvim"] = { module = "plenary" },
 
   ["lewis6991/impatient.nvim"] = {},
@@ -196,7 +195,7 @@ local plugins = {
 
   -- Only load whichkey after all the gui
   ["folke/which-key.nvim"] = {
-    disable = true,
+    disable = false,
     module = "which-key",
     keys = { "<leader>", '"', "'", "`" },
     config = function()
