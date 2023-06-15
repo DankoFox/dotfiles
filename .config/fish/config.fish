@@ -27,6 +27,7 @@ set -gx PATH node_modules/.bin $PATH
 #alias
 alias py python
 alias g git
+alias lg lazygit
 
 command -qv nvim && alias vim nvim
 
@@ -35,4 +36,16 @@ if status is-interactive
   source ~/.bash_aliases
 end
 
+function fish_greeting
+     pokemon-colorscripts -r --no-title
+end
 
+function starship_transient_prompt_func
+  starship module character
+end
+starship init fish | source
+enable_transience
+
+
+
+thefuck --alias | source
