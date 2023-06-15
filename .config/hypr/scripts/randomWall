@@ -1,0 +1,4 @@
+#!/usr/bin/fish
+
+swww init
+swww img (random choice ~/.config/hypr/wallpapers/*)
