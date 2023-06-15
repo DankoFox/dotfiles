@@ -1,5 +1,26 @@
 local options = {
-  ensure_installed = { "lua" },
+  auto_install = true,
+  ensure_installed = {
+    "json",
+    "javascript",
+    "typescript",
+    "tsx",
+    "yaml",
+    "html",
+    "css",
+    "markdown",
+    "svelte",
+    "graphql",
+    "bash",
+    "lua",
+    "vim",
+    "dockerfile",
+    "gitignore",
+  },
+
+  autotag = {
+    enable = true,
+  },
 
   highlight = {
     enable = true,
