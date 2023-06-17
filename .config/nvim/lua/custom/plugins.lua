@@ -67,5 +67,72 @@ local plugins = {
       end
     end,
   },
+    {
+    "ggandor/flit.nvim",
+    dependencies = {
+      {
+        "ggandor/leap.nvim",
+        dependencies = {
+          { "tpope/vim-repeat" },
+        },
+        config = function()
+          require("leap").add_default_mappings()
+        end,
+      },
+    },
+    config = function()
+      require("flit").setup {
+        keys = { f = "f", F = "F", t = "t", T = "T" },
+        labeled_modes = "v",
+        multiline = true,
+        opts = {},
+      }
+    end,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+      lsp = {
+        hover = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
+      },
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      {
+        "MunifTanjim/nui.nvim",
+      },
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      {
+        "rcarriga/nvim-notify",
+        config = function()
+          require("notify").setup {
+            background_colour = "#000000",
+          }
+        end,
+      },
+    },
+  },
+  {
+    "rmagatti/goto-preview",
+    config = function()
+      require("goto-preview").setup {}
+    end,
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    lazy = false,
+    config = function()
+      require("symbols-outline").setup()
+    end,
+  },
 }
 return plugins
