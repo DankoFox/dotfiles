@@ -67,7 +67,7 @@ local plugins = {
       end
     end,
   },
-    {
+  {
     "ggandor/flit.nvim",
     dependencies = {
       {
@@ -133,6 +133,19 @@ local plugins = {
     config = function()
       require("symbols-outline").setup()
     end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim",
+        },
+        opts = { lsp = { auto_attach = true } },
+      },
+    },
   },
 }
 return plugins
