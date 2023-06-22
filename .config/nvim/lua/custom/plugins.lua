@@ -1,7 +1,30 @@
 local plugins = {
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "black",
+        "clang-format",
+        "clangd",
+        "cpplint",
+        "css-lsp",
+        "eslint_d",
+        "html-lsp",
+        "jedi-language-server",
+        "lua-language-server",
+        "luacheck",
+        "mypy",
+        "prettier",
+        "ruff",
+        "stylua",
+        "tailwindcss-language-server",
+        "typescript-language-server",
+        "vim-language-server",
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
-
     dependencies = {
       {
         "jose-elias-alvarez/null-ls.nvim",
