@@ -3,10 +3,20 @@ local plugins = {
     "neovim/nvim-lspconfig",
 
     dependencies = {
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-        require "custom.configs.null-ls"
-      end,
+      {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+          require "custom.configs.null-ls"
+        end,
+      },
+      {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim",
+        },
+        opts = { lsp = { auto_attach = true } },
+      },
     },
 
     config = function()
@@ -19,7 +29,6 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    -- after = "nvim-lspconfig",
     config = function()
       require "custom.configs.null-ls"
     end,
@@ -30,20 +39,15 @@ local plugins = {
       dofile(vim.g.base46_cache .. "syntax")
       require "custom.configs.treesitter"
     end,
-
-    dependencies = {
-      "windwp/nvim-ts-autotag",
-      config = function()
-        require("nvim-ts-autotag").setup {}
-      end,
-    },
   },
   {
     "windwp/nvim-ts-autotag",
-    -- after = "nvim-treesitter/nvim-treesitter",
+    dependencies = "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-ts-autotag").setup {}
     end,
+    lazy = true,
+    event = "VeryLazy",
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -114,6 +118,7 @@ local plugins = {
       {
         "rcarriga/nvim-notify",
         config = function()
+          dofile(vim.g.base46_cache .. "notify")
           require("notify").setup {
             background_colour = "#000000",
           }
@@ -133,19 +138,6 @@ local plugins = {
     config = function()
       require("symbols-outline").setup()
     end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "SmiteshP/nvim-navbuddy",
-        dependencies = {
-          "SmiteshP/nvim-navic",
-          "MunifTanjim/nui.nvim",
-        },
-        opts = { lsp = { auto_attach = true } },
-      },
-    },
   },
 }
 return plugins
