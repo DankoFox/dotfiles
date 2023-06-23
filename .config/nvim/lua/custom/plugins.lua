@@ -33,13 +33,19 @@ local plugins = {
         end,
       },
       {
-        "SmiteshP/nvim-navbuddy",
-        dependencies = {
-          "SmiteshP/nvim-navic",
-          "MunifTanjim/nui.nvim",
-        },
-        opts = { lsp = { auto_attach = true } },
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {},
       },
+
+      -- {
+      --   "SmiteshP/nvim-navbuddy",
+      --   dependencies = {
+      --     "SmiteshP/nvim-navic",
+      --     "MunifTanjim/nui.nvim",
+      --   },
+      --   opts = { lsp = { auto_attach = true } },
+      -- },
     },
 
     config = function()
@@ -96,24 +102,16 @@ local plugins = {
   },
   {
     "ggandor/flit.nvim",
+    lazy = true,
+    event = "VeryLazy",
     dependencies = {
       {
         "ggandor/leap.nvim",
-        dependencies = {
-          { "tpope/vim-repeat" },
-        },
-        config = function()
-          require("leap").add_default_mappings()
-        end,
+        "tpope/vim-repeat",
       },
     },
     config = function()
-      require("flit").setup {
-        keys = { f = "f", F = "F", t = "t", T = "T" },
-        labeled_modes = "v",
-        multiline = true,
-        opts = {},
-      }
+      require("flit").setup {}
     end,
   },
   {
