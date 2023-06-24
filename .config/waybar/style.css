@@ -125,7 +125,7 @@ tooltip {
 #network {
   color: @red;
   border-radius: 10px 0px 0px 10px;
-  border-left: 0px;
+  /* border-left: 0px; */
   border-right: 0px;
 }
 
@@ -159,7 +159,7 @@ tooltip {
 
 #custom-weather {
   border-radius: 0px 10px 10px 0px;
-  border-right: 0px;
+  /* border-right: 0px; */
   margin-left: 0px;
 }
 
