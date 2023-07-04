@@ -1,11 +1,15 @@
 local M = {}
 
-M.gneral = {
+M.interaction = {
   n = {
-    ["<C-Z>"] = { "u", "undo" },
+    ["<c-z>"] = { "u", "undo" },
     ["<C-Y>"] = { "<C-R>", "redo" },
     ["<C-C>"] = { '"+y', "copy" },
     ["<C-V>"] = { '"+p', "paste" },
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
   },
   v = {
     ["<C-C>"] = { '"+y', "copy" },
@@ -27,12 +31,12 @@ M.gotwo = {
   },
 }
 
-M.nav = {
-  n = {
-    ["<leader>fs"] = { "<cmd>lua require('nvim-navbuddy').open()<CR>", "NavBuddy" },
-    ["<leader>so"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
-  },
-}
+-- M.nav = {
+--   n = {
+--     ["<leader>fs"] = { "<cmd>lua require('nvim-navbuddy').open()<CR>", "NavBuddy" },
+--     ["<leader>so"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
+--   },
+-- }
 
 M.trouble = {
   n = {
