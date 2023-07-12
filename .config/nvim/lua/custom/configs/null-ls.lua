@@ -26,8 +26,7 @@ local sources = {
 
   -- Python
   formatting.black,
-  lint.mypy,
-  -- lint.ruff,
+  lint.ruff,
 
   -- C++
   lint.cpplint,

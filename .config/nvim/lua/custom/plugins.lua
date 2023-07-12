@@ -4,22 +4,25 @@ local plugins = {
     opts = {
       ensure_installed = {
         "black",
+        "pyright",
+        "ruff",
+
         "clang-format",
         "clangd",
         "cpplint",
+        "codelldb",
+
+        "lua-language-server",
+        "stylua",
+        "luacheck",
+
         "css-lsp",
         "eslint_d",
         "html-lsp",
-        "jedi-language-server",
-        "lua-language-server",
-        "luacheck",
-        "mypy",
+
         "prettier",
-        "ruff",
-        "stylua",
         "tailwindcss-language-server",
         "typescript-language-server",
-        "vim-language-server",
       },
     },
   },
@@ -41,15 +44,6 @@ local plugins = {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
       },
-
-      -- {
-      --   "SmiteshP/nvim-navbuddy",
-      --   dependencies = {
-      --     "SmiteshP/nvim-navic",
-      --     "MunifTanjim/nui.nvim",
-      --   },
-      --   opts = { lsp = { auto_attach = true } },
-      -- },
     },
 
     config = function()
@@ -58,10 +52,8 @@ local plugins = {
     end,
   },
   {
-    "Vimjas/vim-python-pep8-indent",
-  },
-  {
     "jose-elias-alvarez/null-ls.nvim",
+    event = "VeryLazy",
     config = function()
       require "custom.configs.null-ls"
     end,
@@ -173,6 +165,43 @@ local plugins = {
       require("nvim-surround").setup {
         -- Configuration here, or leave empty to use defaults
       }
+    end,
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require "dap"
+      local dapui = require "dapui"
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end,
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {},
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+    config = function(_, _)
+      require("core.utils").load_mappings "dap"
     end,
   },
 }

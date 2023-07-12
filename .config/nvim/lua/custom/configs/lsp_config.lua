@@ -1,9 +1,18 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local base = require "plugins.configs.lspconfig"
+local on_attach = base.on_attach
+local capabilities = base.capabilities
 capabilities.offsetEncoding = { "utf-16" }
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "clangd", "pyright", "tsserver", "tailwindcss" }
+local servers = { "html", "cssls", "pyright", "tsserver", "tailwindcss" }
+
+lspconfig.clangd.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
