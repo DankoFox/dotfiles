@@ -59,20 +59,18 @@ local plugins = {
     end,
   },
   {
+    "windwp/nvim-ts-autotag",
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
+    event = "VeryLazy",
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
     config = function()
       dofile(vim.g.base46_cache .. "syntax")
       require "custom.configs.treesitter"
     end,
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("nvim-ts-autotag").setup {}
-    end,
-    lazy = true,
-    event = "VeryLazy",
   },
   {
     "NvChad/nvim-colorizer.lua",
