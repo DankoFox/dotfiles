@@ -81,6 +81,7 @@
     "format": "{icon} {percent}%",
     "format-icons": ["", "", ""],
     "on-click": "~/.config/waybar/scripts/cycleWall.sh",
+    "on-click-right": "~/.config/rofi/bin/selectBG",
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
     "min-length": 6
@@ -131,7 +132,7 @@
 
   "temperature": {
     "thermal-zone": 1,
-    "format": "{temperatureC}°C ",
+    "format": " {temperatureC}°C",
     "critical-threshold": 80,
     "format-critical": "{temperatureF}°F "
   },
@@ -168,7 +169,7 @@
   "custom/media": {
     "format": "{icon} {}",
     "return-type": "json",
-    "max-length": 40,
+    "max-length": 45,
     "format-icons": {
       "spotify": "",
       "default": "🎜"
