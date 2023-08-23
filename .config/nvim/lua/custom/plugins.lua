@@ -26,10 +26,10 @@ local plugins = {
       },
     },
   },
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
-  },
+  -- {
+  --   "christoomey/vim-tmux-navigator",
+  --   lazy = false,
+  -- },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -84,6 +84,7 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     dependencies = {
       { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+      { "jcdickinson/codeium.nvim", config = true },
     },
     opts = function(_, opts)
       -- original LazyVim kind icon formatter
@@ -117,9 +118,19 @@ local plugins = {
         hover = {
           enabled = false,
         },
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+        },
         signature = {
           enabled = false,
         },
+      },
+      presets = {
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false, -- add a border to hover docs and signature help
       },
     },
     dependencies = {
@@ -201,6 +212,48 @@ local plugins = {
     config = function(_, _)
       require("core.utils").load_mappings "dap"
     end,
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    event = "VeryLazy",
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("todo-comments").setup {}
+    end,
+  },
+  -- {
+  --   lazy = false,
+  --   "Exafunction/codeium.vim",
+  --   event = "BufEnter",
+  --   config = function()
+  --     -- Change '<C-g>' here to any keycode you like.
+  --     vim.keymap.set("i", "<a-g>", function()
+  --       return vim.fn["codeium#Accept"]()
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<a-;>", function()
+  --       return vim.fn["codeium#CycleCompletions"](1)
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<a-,>", function()
+  --       return vim.fn["codeium#CycleCompletions"](-1)
+  --     end, { expr = true })
+  --     vim.keymap.set("i", "<a-x>", function()
+  --       return vim.fn["codeium#Clear"]()
+  --     end, { expr = true })
+  --   end,
+  -- },
+  {
+    "iamcco/markdown-preview.nvim",
+    lazy = true,
+    ft = { "markdown", "md", "mdwn", "mkd", "mkdn", "mark" },
+    build = "cd app && yarn install",
   },
 }
 return plugins

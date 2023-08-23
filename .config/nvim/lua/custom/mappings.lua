@@ -20,6 +20,7 @@ M.interaction = {
 
     ["H"] = { "^", "Jump to line start" },
     ["L"] = { "$", "Jump to line end" },
+    ["<leader>lg"] = { "<CMD>LazyGit<CR>", "Open LazyGit" },
   },
   v = {
     ["<C-C>"] = { '"+y', "copy" },
@@ -57,11 +58,6 @@ M.gotwo = {
 M.trouble = {
   n = {
     ["<leader>xx"] = { "<cmd>TroubleToggle<cr>", "Trouble Toggle" },
-    ["<leader>xw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Trouble Workspace" },
-    ["<leader>xd"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble Document" },
-    ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<cr>", "Trouble QuickFix" },
-    ["<leader>xl"] = { "<cmd>TroubleToggle loclist<cr>", "Trouble LocList" },
-    ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "Trouble Lsp" },
   },
 }
 
