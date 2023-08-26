@@ -26,23 +26,23 @@ format = ' [$symbol$environment](dimmed green) '
 
 # Prompt symbols 
 [character]
-success_symbol = "[](#a6e3a1 bold)"
-error_symbol = "[](#f38ba8)"
-vicmd_symbol = "[](#f9e2af)"
+success_symbol = "[](#9ccfd8 bold)"
+error_symbol = "[](#eb6f92)"
+vicmd_symbol = "[](#f6c177)"
 
 [directory]
-format = "[]($style)[ ](bg:#161821 fg:#81A1C1)[$path](bg:#161821 fg:#BBC3DF bold)[ ]($style)"
+format = "[]($style)[ ](bg:#161821 fg:#31748f)[$path](bg:#161821 fg:#e0def4 bold)[ ]($style)"
 style = "bg:none fg:#161821"
 truncation_length = 3
 truncate_to_repo=false
 
 [git_branch]
-format = "[]($style)[[ ](bg:#161821 fg:#A2DD9D bold)$branch](bg:#161821 fg:#86AAEC)[ ]($style)"
+format = "[]($style)[[ ](bg:#161821 fg:#9ccfd8 bold)$branch](bg:#161821 fg:#31748f)[ ]($style)"
 style = "bg:none fg:#161821"
 
 [git_status]
 # $all status$ahead_behind
-format = "[]($style)[$all_status$ahead_behind](bg:#161821 fg:#b4befe)[ ]($style)"
+format = "[]($style)[$all_status$ahead_behind](bg:#161821 fg:#e0def4)[ ]($style)"
 style = "bg:none fg:#161821"
 conflicted = "="
 ahead =	"⇡${count}"
@@ -59,6 +59,6 @@ deleted = "${count}"
 [cmd_duration]
 min_time = 1
 # duration & style 
-format = "[]($style)[[󰔚 ](bg:#161821 fg:#eba0ac bold)$duration](bg:#161821 fg:#BBC3DF)[ ]($style)"
+format = "[]($style)[[󰔚 ](bg:#161821 fg:#eb6f92 bold)$duration](bg:#161821 fg:#e0def4)[ ]($style)"
 disabled = false
 style = "bg:none fg:#161821"
