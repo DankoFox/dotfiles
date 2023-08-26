@@ -255,5 +255,12 @@ local plugins = {
     ft = { "markdown", "md", "mdwn", "mkd", "mkdn", "mark" },
     build = "cd app && yarn install",
   },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.rainbow-delimiters"
+    end,
+  },
 }
 return plugins
