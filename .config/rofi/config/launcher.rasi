@@ -25,7 +25,7 @@ window {
 
 prompt {
     enabled: 			            true;
-    padding: 			            8px;
+    padding: 			            10px;
     background-color: 		        @BG;
     text-color: 		            @IMG;
 }
@@ -46,7 +46,7 @@ entry {
     placeholder-color:              @FG;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "Search...";
+    placeholder:                    " 検索...";
     blink:                          true;
     border:                  	    0px 0px 2px 0px;
     border-color:                   @BDR;

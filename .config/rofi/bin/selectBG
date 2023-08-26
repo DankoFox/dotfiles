@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Path to wallpaper folders
+WALLPAPERS=~/.config/hypr/wallpapers
+cd $WALLPAPERS
+selected=$(exa $WALLPAPERS|rofi -dmenu -i -p "" -theme "$HOME"/.config/rofi/config/launcher.rasi)&&
+
+
+swww img "$selected" --transition-type any --transition-duration 1 --transition-fps 60 
+

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 rofi \
 	-show run \
 	-scroll-method 0 \
