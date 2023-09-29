@@ -7,11 +7,6 @@ M.interaction = {
     ["<C-C>"] = { '"+y', "copy" },
     ["<C-V>"] = { '"+p', "paste" },
 
-    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
-    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
-    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
-    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
-
     ["<C-d>"] = { "<C-d>zz", "Half down and center cursor" },
     ["<C-u>"] = { "<C-u>zz", "Half up and center cursor" },
 

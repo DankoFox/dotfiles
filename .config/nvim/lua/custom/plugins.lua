@@ -66,6 +66,7 @@ local plugins = {
     event = "VeryLazy",
     dependencies = {
       "windwp/nvim-ts-autotag",
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
     config = function()
       dofile(vim.g.base46_cache .. "syntax")
@@ -229,26 +230,6 @@ local plugins = {
       require("todo-comments").setup {}
     end,
   },
-  -- {
-  --   lazy = false,
-  --   "Exafunction/codeium.vim",
-  --   event = "BufEnter",
-  --   config = function()
-  --     -- Change '<C-g>' here to any keycode you like.
-  --     vim.keymap.set("i", "<a-g>", function()
-  --       return vim.fn["codeium#Accept"]()
-  --     end, { expr = true })
-  --     vim.keymap.set("i", "<a-;>", function()
-  --       return vim.fn["codeium#CycleCompletions"](1)
-  --     end, { expr = true })
-  --     vim.keymap.set("i", "<a-,>", function()
-  --       return vim.fn["codeium#CycleCompletions"](-1)
-  --     end, { expr = true })
-  --     vim.keymap.set("i", "<a-x>", function()
-  --       return vim.fn["codeium#Clear"]()
-  --     end, { expr = true })
-  --   end,
-  -- },
   {
     "iamcco/markdown-preview.nvim",
     lazy = true,
