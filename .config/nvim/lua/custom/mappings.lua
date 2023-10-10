@@ -6,6 +6,7 @@ M.interaction = {
     ["<C-Y>"] = { "<C-R>", "redo" },
     ["<C-C>"] = { '"+y', "copy" },
     ["<C-V>"] = { '"+p', "paste" },
+    ["<C-A>"] = { "ggVG", "all" },
 
     ["<C-d>"] = { "<C-d>zz", "Half down and center cursor" },
     ["<C-u>"] = { "<C-u>zz", "Half up and center cursor" },
@@ -43,12 +44,11 @@ M.gotwo = {
   },
 }
 
--- M.nav = {
---   n = {
---     ["<leader>fs"] = { "<cmd>lua require('nvim-navbuddy').open()<CR>", "NavBuddy" },
---     ["<leader>so"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
---   },
--- }
+M.nav = {
+  n = {
+    ["<leader>o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
+  },
+}
 
 M.trouble = {
   n = {

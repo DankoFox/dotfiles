@@ -34,13 +34,14 @@ local plugins = {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         config = function()
           require "custom.configs.null-ls"
         end,
       },
       {
         "folke/trouble.nvim",
+        dofile(vim.g.base46_cache .. "trouble"),
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
       },
@@ -85,7 +86,7 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     dependencies = {
       { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
-      { "jcdickinson/codeium.nvim", config = true },
+      -- { "jcdickinson/codeium.nvim", config = true },
     },
     opts = function(_, opts)
       -- original LazyVim kind icon formatter
@@ -135,22 +136,17 @@ local plugins = {
       },
     },
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       {
         "MunifTanjim/nui.nvim",
       },
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      {
-        "rcarriga/nvim-notify",
-        config = function()
-          -- dofile(vim.g.base46_cache .. "notify")
-          require("notify").setup {
-            background_colour = "#000000",
-          }
-        end,
-      },
+      --   "rcarriga/nvim-notify",
+      --   config = function()
+      --     -- dofile(vim.g.base46_cache .. "notify")
+      --     require("notify").setup {
+      --       background_colour = "#000000",
+      --     }
+      --   end,
+      -- },
     },
   },
   {
@@ -226,6 +222,7 @@ local plugins = {
     "folke/todo-comments.nvim",
     event = "BufRead",
     dependencies = { "nvim-lua/plenary.nvim" },
+    dofile(vim.g.base46_cache .. "todo"),
     config = function()
       require("todo-comments").setup {}
     end,
@@ -239,9 +236,10 @@ local plugins = {
   {
     "HiPhish/rainbow-delimiters.nvim",
     event = "VeryLazy",
-    config = function()
-      require "custom.configs.rainbow-delimiters"
-    end,
+    dofile(vim.g.base46_cache .. "rainbowdelimiters"),
+    -- config = function()
+    --   require "custom.configs.rainbow-delimiters"
+    -- end,
   },
 }
 return plugins
