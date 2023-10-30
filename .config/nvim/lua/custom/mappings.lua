@@ -17,6 +17,7 @@ M.interaction = {
     ["H"] = { "^", "Jump to line start" },
     ["L"] = { "$", "Jump to line end" },
     ["<leader>lg"] = { "<CMD>LazyGit<CR>", "Open LazyGit" },
+    ["<A-o>"] = { "o<Esc>k", "New Line in normal" },
   },
   v = {
     ["<C-C>"] = { '"+y', "copy" },
@@ -28,7 +29,6 @@ M.interaction = {
   },
   i = {
     -- save
-    ["<C-s>"] = { "<cmd> w <CR>", "save file" },
     ["jk"] = { "<Esc>" },
     ["kj"] = { "<Esc>" },
   },

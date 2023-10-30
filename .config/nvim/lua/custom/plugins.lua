@@ -53,13 +53,6 @@ local plugins = {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
-    config = function()
-      require "custom.configs.null-ls"
-    end,
-  },
-  {
     "windwp/nvim-ts-autotag",
   },
   {
@@ -98,18 +91,18 @@ local plugins = {
     end,
   },
   {
-    "ggandor/flit.nvim",
-    lazy = true,
+    "folke/flash.nvim",
     event = "VeryLazy",
-    dependencies = {
-      {
-        "ggandor/leap.nvim",
-        "tpope/vim-repeat",
-      },
-    },
-    config = function()
-      require("flit").setup {}
-    end,
+    ---@type Flash.Config
+    opts = {},
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
   },
   {
     "folke/noice.nvim",
@@ -139,14 +132,6 @@ local plugins = {
       {
         "MunifTanjim/nui.nvim",
       },
-      --   "rcarriga/nvim-notify",
-      --   config = function()
-      --     -- dofile(vim.g.base46_cache .. "notify")
-      --     require("notify").setup {
-      --       background_colour = "#000000",
-      --     }
-      --   end,
-      -- },
     },
   },
   {
@@ -237,9 +222,6 @@ local plugins = {
     "HiPhish/rainbow-delimiters.nvim",
     event = "VeryLazy",
     dofile(vim.g.base46_cache .. "rainbowdelimiters"),
-    -- config = function()
-    --   require "custom.configs.rainbow-delimiters"
-    -- end,
   },
 }
 return plugins
