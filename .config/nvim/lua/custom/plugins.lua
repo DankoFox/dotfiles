@@ -26,10 +26,6 @@ local plugins = {
       },
     },
   },
-  -- {
-  --   "christoomey/vim-tmux-navigator",
-  --   lazy = false,
-  -- },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -99,9 +95,9 @@ local plugins = {
   keys = {
     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
     { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    -- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    -- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
   },
   {
@@ -222,6 +218,35 @@ local plugins = {
     "HiPhish/rainbow-delimiters.nvim",
     event = "VeryLazy",
     dofile(vim.g.base46_cache .. "rainbowdelimiters"),
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      char = "▏",
+      context_char = "┃",
+      indent_blankline_use_treesitter_scope = true,
+    },
+  },
+  {
+    "nvimdev/lspsaga.nvim",
+    config = function()
+      require("lspsaga").setup {}
+    end,
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter", -- optional
+      "nvim-tree/nvim-web-devicons", -- optional
+    },
+  },
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    event = "VeryLazy",
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("oil").setup()
+    end,
   },
 }
 return plugins

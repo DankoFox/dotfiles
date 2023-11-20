@@ -7,6 +7,7 @@ M.interaction = {
     ["<C-C>"] = { '"+y', "copy" },
     ["<C-V>"] = { '"+p', "paste" },
     ["<C-A>"] = { "ggVG", "all" },
+    ["<C-I>"] = { "<C-I>", "jump foward" },
 
     ["<C-d>"] = { "<C-d>zz", "Half down and center cursor" },
     ["<C-u>"] = { "<C-u>zz", "Half up and center cursor" },
@@ -18,6 +19,7 @@ M.interaction = {
     ["L"] = { "$", "Jump to line end" },
     ["<leader>lg"] = { "<CMD>LazyGit<CR>", "Open LazyGit" },
     ["<A-o>"] = { "o<Esc>k", "New Line in normal" },
+    ["-"] = { "<CMD>Oil<CR>", "Open parent directory" },
   },
   v = {
     ["<C-C>"] = { '"+y', "copy" },
@@ -33,14 +35,13 @@ M.interaction = {
     ["kj"] = { "<Esc>" },
   },
 }
-
 M.gotwo = {
   n = {
-    ["gpd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Preview Def" },
-    ["gpt"] = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", "Preview Type" },
-    ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Preview Imp" },
-    ["gP"] = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "Close all preview windows" },
-    ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "Preview ref" },
+    ["gpd"] = { "<cmd>Lspsaga peek_definition<CR>", "Preview Def" },
+    ["gpt"] = { "<cmd>Lspsaga peek_type_definition<CR>", "Preview Type" },
+    -- ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Preview Imp" },
+    -- ["gP"] = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "Close all preview windows" },
+    ["gpr"] = { "<cmd>Lspsaga finder<CR>", "Preview ref" },
   },
 }
 
