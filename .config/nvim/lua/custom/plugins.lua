@@ -1,3 +1,5 @@
+local override = require "custom.configs.override"
+
 local plugins = {
   {
     "williamboman/mason.nvim",
@@ -247,6 +249,10 @@ local plugins = {
     config = function()
       require("oil").setup()
     end,
+  },
+  {
+    "NvChad/nvterm",
+    opts = override.nvterm,
   },
 }
 return plugins
