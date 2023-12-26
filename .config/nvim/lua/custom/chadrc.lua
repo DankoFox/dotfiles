@@ -1,26 +1,16 @@
 -- First read our docs (completely) then check the example_config repo
-
 local M = {}
+
+local highlights = require "custom.highlights"
 
 -- non plugin ui configs, available without any plugins
 M.ui = {
   theme = "rosepine",
   transparency = true,
   -- lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
-  extended_integrations = { "todo", "trouble", "rainbowdelimiters" },
+  extended_integrations = { "todo", "trouble", "rainbowdelimiters", "dap", "lspsaga" },
 
-  hl_override = {
-    TelescopeSelection = { bg = "#31748f" },
-    NvDashAscii = {
-      fg = "blue",
-      bg = "none",
-    },
-
-    NvDashButtons = {
-      fg = "blue",
-      bg = "none",
-    },
-  },
+  hl_override = highlights.override,
 
   statusline = {
     theme = "minimal", -- default/vscode/vscode_colored/minimal
@@ -28,10 +18,16 @@ M.ui = {
     overriden_modules = nil,
   },
 
+  tabufline = {
+    overriden_modules = function(modules)
+      table.remove(modules, 4) -- remove buttons
+    end,
+  },
+
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
     border_color = "grey_fg", -- only applicable for "default" style, use color names from base30 variables
     selected_item_bg = "colored", -- colored / simple
   },
@@ -56,7 +52,7 @@ M.ui = {
       "⠀⠀⠀⠀⠀⠀⣾⡇⠀⢸⣿⠀⢠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣷⣄⣀⣠⣴⣿⠟⠋⠙⢿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⢸⣷⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀ ",
       "⠀⠀⠀⠀⠀⠀⠿⠇⠀⠺⠇⠀⠸⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⠿⠿⠛⠁⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠗⠀⠸⠿⠀⠀⠿⠃⠀⠀⠀⠀⠀⠀ ",
       "⠀⠀⠀⠀⠀⠀                                                   ⠀ ⠀⠀⠀⠀⠀ ",
-      "૮₍ ˃ ⤙ ˂ ₎ა          đụ má text editor số 1         ૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა",
+      " 	(＞﹏＜)            text editor số 1             ૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა",
     },
 
     buttons = {

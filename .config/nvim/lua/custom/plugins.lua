@@ -1,36 +1,15 @@
 local override = require "custom.configs.override"
+local add = require "custom.configs.add"
 
 local plugins = {
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "black",
-        "pyright",
-        "ruff",
-
-        "clang-format",
-        "clangd",
-        "cpplint",
-        "codelldb",
-
-        "lua-language-server",
-        "stylua",
-        "luacheck",
-
-        "css-lsp",
-        "eslint_d",
-        "html-lsp",
-
-        "prettier",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-      },
-    },
+    opts = override.mason,
   },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      "pmizio/typescript-tools.nvim",
       {
         "nvimtools/none-ls.nvim",
         config = function()
@@ -50,9 +29,7 @@ local plugins = {
       require "custom.configs.lsp_config"
     end,
   },
-  {
-    "windwp/nvim-ts-autotag",
-  },
+  { "nvim-tree/nvim-tree.lua", opts = override.nvimtree },
   {
     "nvim-treesitter/nvim-treesitter",
     event = "VeryLazy",
@@ -66,27 +43,8 @@ local plugins = {
     end,
   },
   {
-    "NvChad/nvim-colorizer.lua",
-    opts = {
-      user_default_options = {
-        tailwind = true,
-      },
-    },
-  },
-  {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
-      -- { "jcdickinson/codeium.nvim", config = true },
-    },
-    opts = function(_, opts)
-      -- original LazyVim kind icon formatter
-      local format_kinds = opts.formatting.format
-      opts.formatting.format = function(entry, item)
-        format_kinds(entry, item) -- add icons
-        return require("tailwindcss-colorizer-cmp").formatter(entry, item)
-      end
-    end,
+    opts = override.cmp,
   },
   {
     "folke/flash.nvim",
@@ -94,38 +52,15 @@ local plugins = {
     ---@type Flash.Config
     opts = {},
   -- stylua: ignore
-  keys = {
-    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    -- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    -- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+ keys = {
+    { "<leader>fl", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "<leader>ft", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
   },
   },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-      lsp = {
-        hover = {
-          enabled = false,
-        },
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
-        },
-        signature = {
-          enabled = false,
-        },
-      },
-      presets = {
-        long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
-      },
-    },
+    opts = require "custom.configs.noice",
     dependencies = {
       {
         "MunifTanjim/nui.nvim",
@@ -140,10 +75,8 @@ local plugins = {
   },
   {
     "simrat39/symbols-outline.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("symbols-outline").setup()
-    end,
+    cmd = "SymbolsOutline",
+    config = true,
   },
 
   {
@@ -151,9 +84,7 @@ local plugins = {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
+      require("nvim-surround").setup {}
     end,
   },
 
@@ -195,11 +126,7 @@ local plugins = {
   },
   {
     "kdheepak/lazygit.nvim",
-    event = "VeryLazy",
-    -- optional for floating window border decoration
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
+    cmd = "LazyGit",
   },
   {
     "folke/todo-comments.nvim",
@@ -232,9 +159,13 @@ local plugins = {
   {
     "nvimdev/lspsaga.nvim",
     config = function()
-      require("lspsaga").setup {}
+      require("lspsaga").setup {
+        lightbulb = {
+          enable = false,
+        },
+      }
     end,
-    event = "VeryLazy",
+    event = "LspAttach",
     dependencies = {
       "nvim-treesitter/nvim-treesitter", -- optional
       "nvim-tree/nvim-web-devicons", -- optional
@@ -244,7 +175,6 @@ local plugins = {
     "stevearc/oil.nvim",
     opts = {},
     event = "VeryLazy",
-    -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("oil").setup()
@@ -253,6 +183,32 @@ local plugins = {
   {
     "NvChad/nvterm",
     opts = override.nvterm,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    event = "VimEnter",
+    dependencies = {
+      "kevinhwang91/promise-async",
+      {
+        "luukvbaal/statuscol.nvim",
+        opts = add.statuscol,
+      },
+    },
+    opts = {
+      close_fold_kinds = { "imports" },
+      provider_selector = function()
+        return { "treesitter", "indent" }
+      end,
+    },
+  },
+  {
+    "karb94/neoscroll.nvim",
+    keys = { "<C-d>", "<C-u>" },
+    opts = { easing_function = "sine", mappings = {
+      "<C-u>",
+      "<C-d>",
+      "zz",
+    } },
   },
 }
 return plugins

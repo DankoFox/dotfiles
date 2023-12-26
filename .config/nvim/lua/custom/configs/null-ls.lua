@@ -16,7 +16,7 @@ local sources = {
 
   -- webdev stuff
   formatting.deno_fmt,
-  formatting.prettier,
+  formatting.prettierd,
   lint.eslint_d,
   b.code_actions.eslint_d,
 
