@@ -1,3 +1,4 @@
+fish_config theme choose "Rosé Pine"
 set fish_greeting ""
 
 set -gx TERM xterm-256color
@@ -21,6 +22,9 @@ set -gx PATH $GEM_HOME/bin $PATH
 set -x DENO_INSTALL ~/.deno
 set -x PATH $DENO_INSTALL/bin:$PATH
 
+set -x GTK_IM_MODULE fcitx
+set -x QT_IM_MODULE fcitx
+set -x XMODIFIERS @im=fcitx
 # NodeJS
 set -gx PATH node_modules/.bin $PATH
 
@@ -29,7 +33,11 @@ alias py python
 alias g git
 alias lg lazygit
 
-command -qv nvim && alias vim nvim
+alias cyclewall ~/.config/waybar/scripts/cycleWall.sh
+alias selectwall ~/.config/rofi/bin/selectBG
+alias gg++ "g++ -Wall -Werror -Wextra"
+
+command -qv nvim && alias nv nvim
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -37,7 +45,7 @@ if status is-interactive
 end
 
 function fish_greeting
-     pokemon-colorscripts -r --no-title
+     colorscript random
 end
 
 function starship_transient_prompt_func
@@ -49,3 +57,4 @@ enable_transience
 
 
 thefuck --alias | source
+fish_add_path /home/danko/.spicetify
