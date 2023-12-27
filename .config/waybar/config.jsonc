@@ -8,11 +8,10 @@
   "height": 50,
   // "spacing": 4,
   "modules-left": ["clock", "tray", "hyprland/workspaces"],
-  // "modules-center": ["hyprland/window"],
-  "modules-center": ["custom/spotify"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "network",
-    "bluetooth",
+    // "bluetooth",
     "temperature",
     "memory",
     "battery",
@@ -20,7 +19,8 @@
     "backlight"
   ],
   "hyprland/window": {
-    "format": "{}"
+    "format": "{}",
+    "max-length": 40
   },
 
   "hyprland/workspaces": {
@@ -29,16 +29,16 @@
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-      "1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "6": "六",
-      "7": "七",
-      "8": "八",
-      "9": "九",
-      "10": "十"
+      "1": "いち",
+      "2": "に",
+      "3": "さん",
+      "4": "よん",
+      "5": "ご",
+      "6": "ろく",
+      "7": "なな",
+      "8": "はち",
+      "9": "きゅう",
+      "10": "じゅう"
     }
   },
 
@@ -48,7 +48,7 @@
   },
 
   "clock": {
-    "format": "{: %R   %d/%m}",
+    "format": "{: %R  %d/%m}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     // "format": "{: %I:%M %p   %a, %b %e}",
     // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
@@ -81,7 +81,7 @@
   "pulseaudio": {
     "format": "{icon} {volume}",
     "tooltip": false,
-    "format-muted": " Muted",
+    "format-muted": " ミュート",
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "pamixer -i 5",
@@ -110,14 +110,14 @@
 
   "temperature": {
     "thermal-zone": 1,
-    "format": " {temperatureC}°C",
+    "format": "TEMP {temperatureC}°C",
     "critical-threshold": 80,
-    "format-critical": "{temperatureF}°F "
+    "format-critical": "{temperatureC}°C "
   },
 
   "memory": {
     "interval": 30,
-    "format": " {}%",
+    "format": "RAM {}%",
     "max-length": 10,
     "tooltip": true,
     "tooltip-format": "Memory - {used:0.1f}GB used",
@@ -126,11 +126,11 @@
 
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "  {signalStrength}%",
+    "format-wifi": " {signalStrength}%",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
+    "format-disconnected": "NONE ⚠",
     "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
     "on-click-right": "~/.config/rofi/bin/network"
   },

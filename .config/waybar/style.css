@@ -3,7 +3,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font Mono";
+  font-family: "JetBrainsMono NFM ExtraBold";
   font-weight: bold;
   font-size: 16px;
   min-height: 0;
@@ -16,7 +16,7 @@ window#waybar {
 
 tooltip {
   background: @base;
-  border-radius: 10px;
+  border-radius: 4px;
   border-width: 2px;
   border-style: solid;
   border-color: @overlay;
@@ -35,19 +35,19 @@ tooltip {
 #workspaces button.focused {
   color: @subtle;
   background: @love;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #workspaces button.urgent {
   color: @base;
   background: @pine;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #workspaces button:hover {
   background: @highlightLow;
   color: @text;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #custom-power_profile,
@@ -66,39 +66,43 @@ tooltip {
   opacity: 0.9;
   padding: 0px 10px;
   margin: 3px 0px;
-  margin-top: 10px;
-  border: 1px solid @overlay;
+  margin-top: 15px;
+  border: 2px solid @pine;
 }
 
 #memory {
-  color: @foam;
+  color: #3e8fb0;
+  border-left: 0px;
+  border-right: 0px;
 }
 
 #temperature {
-  color: @rose;
-  border-radius: 0px 0px 0px 0px;
+  color: @gold;
+  border-left: 0px;
   border-right: 0px;
 }
 
 #temperature.critical {
+  border-left: 0px;
+  border-right: 0px;
   color: @love;
 }
 
 #backlight {
   color: @text;
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 10px;
+  border-radius: 0px 8px 8px 0px;
+  margin-right: 20px;
 }
 
 #tray {
-  border-radius: 10px;
+  border-radius: 8px;
   margin-left: 10px;
   margin-right: 0px;
 }
 
 #workspaces {
   background: @base;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-left: 10px;
   padding-right: 0px;
   padding-left: 5px;
@@ -111,61 +115,45 @@ tooltip {
 }
 
 #window {
-  border-radius: 10px;
+  border-radius: 8px;
   margin-left: 60px;
   margin-right: 60px;
 }
 
+window#waybar.empty {
+  background-color: transparent;
+}
+
+window#waybar.empty #window {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  /*  background-color: rgba(66,66,66,0.5); */ /* transparent */
+  background-color: transparent;
+}
+
 #clock {
-  color: @gold;
-  border-radius: 10px;
-  margin-left: 10px;
-  border-right: 0px;
+  color: @text;
+  background: @pine;
+  border-radius: 8px;
+  margin-left: 20px;
 }
 
 #network {
   color: @love;
-  border-radius: 10px 0px 0px 10px;
-  /* border-left: 0px; */
+  border-radius: 8px 0px 0px 8px;
   border-right: 0px;
-}
-
-#bluetooth {
-  color: @gold;
-  border-radius: 0px 0px 0px 0px;
-  border-right: 0px;
-  /* margin-right: 10px; */
 }
 
 #pulseaudio {
   color: @iris;
-  border-radius: 10px 0px 0px 10px;
-  /* border-left: 0px; */
+  border-radius: 8px 0px 0px 8px;
   border-right: 0px;
-}
-
-#pulseaudio.microphone {
-  color: #c4a7e7;
-  border-left: 0px;
-  border-right: 0px;
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 10px;
 }
 
 #battery {
   color: @foam;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 8px 8px 0;
   margin-right: 10px;
   border-left: 0px;
-}
-
-#custom-spotify {
-  min-width: 140px;
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
-  padding: 0 10px;
-  color: @foam;
-  padding: 0px 10px;
-  margin: 3px 0px;
-  margin-top: 10px;
 }
