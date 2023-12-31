@@ -1,14 +1,14 @@
 ![desktop](https://github.com/DankChoir/dotfiles/assets/79992320/1b2721ea-a2cc-4c80-888d-a0c99bdc880e)
 ![meowvim](https://github.com/DankChoir/dotfiles/assets/79992320/35466894-de75-4e26-bbad-53f4555faac6)
 
-# Danko's dotfiles
+# Danko's dotfiles 💖
 
 My silly, bombastic dotfiles - Holy Grail of dotfiles
 
 **Warning**: Feel free to blindly use my settings if you've got no idea they do.
 It works most of the time. **TRUST ME**
 
-## What I use
+## What I use 🔰
 
 - Window Manager: [Hyprland](https://hyprland.org/)
 - Bar: [Waybar](https://github.com/Alexays/Waybar)
@@ -18,7 +18,7 @@ It works most of the time. **TRUST ME**
 - Notification: [mako](https://github.com/emersion/mako)
 - Laucher: [rofi](https://github.com/davatorium/rofi)
 
-### Terminal ultilities
+## Terminal ultilities 🛠️
 
 ![term-demo](https://github.com/DankChoir/dotfiles/assets/79992320/78cc0e42-fe53-42b8-895d-73d4279dc36d)
 
@@ -32,7 +32,7 @@ It works most of the time. **TRUST ME**
 - [Eza](https://github.com/eza-community/eza) - my goto file-listing command, a
   replacement for `ls`
 
-### Neovim config
+## Neovim config ⚙️
 
 ![dap-demo](https://github.com/DankChoir/dotfiles/assets/79992320/076bf5fb-5b1e-4f15-a096-5b41a2c676dd)
 
@@ -58,6 +58,12 @@ My custom [NvChad](https://nvchad.com) config will follow this structure
             ├── autocommands.lua    -- command that active on certain events
             ├── neovide.lua         -- smooth GUI for neovim
             └── options.lua         -- change Neovim options
+```
+
+#### Installation
+
+```bash
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
 
 ## Misc
