@@ -15,6 +15,8 @@ It works most of the time. **TRUST ME**
 - IDE: Neovim - with [NvChad](https://nvchad.com)
 - Terminal: [kitty](https://github.com/kovidgoyal/kitty)
 - Shell: fish (with [starship](https://starship.rs/) prompt)
+- Notification: [mako](https://github.com/emersion/mako)
+- Laucher: [rofi](https://github.com/davatorium/rofi)
 
 ### Terminal ultilities
 
