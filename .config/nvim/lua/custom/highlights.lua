@@ -4,19 +4,15 @@ M.override = {
   Comment = {
     italic = true,
   },
-  Operator = {
-    italic = true,
-  },
-  TelescopeSelection = { bg = "#31748f" },
-  NvDashAscii = {
-    fg = "blue",
-    bg = "none",
-  },
+  TelescopeSelection = { bg = "#31748f", fg = "black" },
 
-  NvDashButtons = {
-    fg = "blue",
-    bg = "none",
-  },
+  Search = { fg = "black", bg = "yellow" },
+  IncSearch = { fg = "black", bg = "red" },
+  CurSearch = { fg = "black", bg = "green" },
+  FoldColumn = { bg = "NONE" },
+
+  NvDashAscii = { fg = "blue", bg = "NONE" },
+  NvDashButtons = { fg = "blue", bg = "NONE" },
 }
 
 return M

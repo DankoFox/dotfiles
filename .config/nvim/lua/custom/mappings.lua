@@ -71,11 +71,21 @@ M.dap = {
     ["<leader>db"] = {
       "<cmd> DapToggleBreakpoint <CR>",
       "Add breakpoint at line",
+      opts = { silent = true },
     },
     ["<leader>dc"] = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
+      opts = { silent = true },
     },
+    ["<leader>do"] = {
+      "<cmd> DapStepOver <CR>",
+      "Step Over",
+      opts = { silent = true },
+    },
+    ["<leader>di"] = { "<cmd>DapStepInto<cr>", "Step Into", opts = { silent = true } },
+
+    ["<leader>du"] = { "<cmd>DapStepOut<cr>", "Step Out", opts = { silent = true } },
   },
 }
 

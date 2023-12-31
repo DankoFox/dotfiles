@@ -68,12 +68,6 @@ local plugins = {
     },
   },
   {
-    "rmagatti/goto-preview",
-    config = function()
-      require("goto-preview").setup {}
-    end,
-  },
-  {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
     config = true,

@@ -5,6 +5,13 @@ local capabilities = base.capabilities
 local lspconfig = require "lspconfig"
 local servers = { "html", "pyright", "tailwindcss" }
 
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
+
 lspconfig.cssls.setup {
   settings = {
     css = { validate = true, lint = {
@@ -35,10 +42,3 @@ lspconfig.clangd.setup {
 }
 
 require("typescript-tools").setup {}
-
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-end

@@ -7,7 +7,6 @@ M.statuscol = function()
     bt_ignore = { "nofile", "prompt", "terminal", "packer" },
     ft_ignore = {
       "NvimTree",
-      "dashboard",
       "nvcheatsheet",
       "dapui_watches",
       "dap-repl",
@@ -17,13 +16,11 @@ M.statuscol = function()
       "dapui_scopes",
       "help",
       "vim",
-      "alpha",
-      "dashboard",
-      "neo-tree",
       "Trouble",
       "noice",
       "lazy",
       "toggleterm",
+      "nvdash",
     },
     segments = {
       -- Segment: Add padding
