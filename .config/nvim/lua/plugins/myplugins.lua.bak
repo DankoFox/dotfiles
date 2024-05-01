@@ -1,0 +1,72 @@
+local override = require "configs.override"
+local add = require "configs.others"
+
+local plugins = {
+
+  {
+    "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
+    dependencies = "mfussenegger/nvim-dap",
+    config = add.dapui,
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {},
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+    config = function(_, _)
+      require("core.utils").load_mappings "dap"
+    end,
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit",
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    dofile(vim.g.base46_cache .. "todo"),
+    config = true,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    lazy = true,
+    ft = { "markdown", "md", "mdwn", "mkd", "mkdn", "mark" },
+    build = "cd app && yarn install",
+  },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "VeryLazy",
+    dofile(vim.g.base46_cache .. "rainbowdelimiters"),
+  },
+
+  -- WILL DELETO
+  {
+    "mrcjkb/haskell-tools.nvim",
+    version = "^3", -- Recommended
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+  },
+  {
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup {
+        mappings = { "jk" },
+      }
+    end,
+  },
+}
+return plugins

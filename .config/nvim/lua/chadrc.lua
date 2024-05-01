@@ -1,7 +1,7 @@
 -- First read our docs (completely) then check the example_config repo
 local M = {}
 
-local highlights = require "custom.highlights"
+local highlights = require "highlights"
 
 -- non plugin ui configs, available without any plugins
 M.ui = {
@@ -66,8 +66,8 @@ M.ui = {
   },
 }
 
-M.plugins = "custom.plugins"
+-- M.plugins = "plugins"
 
-M.mappings = require "custom.mappings"
+-- M.mappings = require "mappings"
 
 return M

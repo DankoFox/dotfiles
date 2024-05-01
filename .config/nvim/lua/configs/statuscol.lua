@@ -1,6 +1,4 @@
-local M = {}
-
-M.statuscol = function()
+return function()
   local builtin = require "statuscol.builtin"
   return {
     relculright = true,
@@ -74,5 +72,3 @@ M.statuscol = function()
     },
   }
 end
-
-return M
