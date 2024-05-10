@@ -30,6 +30,7 @@ map("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 map("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 map("n", "<leader>o", "<cmd>SymbolsOutline<CR>", { desc = "Symbols Outline" })
+map("n", "<leader>rr", ":IncRename ")
 
 -- local M = {}
 --

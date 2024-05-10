@@ -8,6 +8,14 @@ return {
   },
 
   {
+    "mfussenegger/nvim-lint",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require "configs.nvimlint"
+    end,
+  },
+
+  {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
     config = true,
@@ -93,7 +101,6 @@ return {
       mappings = {
         "<C-u>",
         "<C-d>",
-        "zz",
       },
     },
   },
@@ -159,5 +166,12 @@ return {
       "nvim-telescope/telescope.nvim", -- optional
     },
     ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+  },
+  {
+    "smjonas/inc-rename.nvim",
+    event = "LspAttach",
+    config = function()
+      require("inc_rename").setup()
+    end,
   },
 }

@@ -19,7 +19,7 @@ end
 lspconfig.clangd.setup {
   cmd = {
     "clangd",
-    "--offset-encoding=utf-16", -- To match null-ls
+    "--offset-encoding=utf-16",
     "--enable-config",
   },
   on_attach = function(client, bufnr)
