@@ -27,4 +27,8 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
-require("typescript-tools").setup {}
+require("typescript-tools").setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}

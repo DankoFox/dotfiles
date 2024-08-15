@@ -25,8 +25,13 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = "VeryLazy",
     dependencies = {
-      "windwp/nvim-ts-autotag",
       "nvim-treesitter/nvim-treesitter-textobjects",
+      {
+        "windwp/nvim-ts-autotag",
+        config = function()
+          require("nvim-ts-autotag").setup()
+        end,
+      },
     },
     config = function()
       dofile(vim.g.base46_cache .. "syntax")
