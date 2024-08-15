@@ -15,7 +15,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- typescript
 lspconfig.clangd.setup {
   cmd = {
     "clangd",
@@ -27,5 +26,4 @@ lspconfig.clangd.setup {
   end,
   capabilities = capabilities,
 }
-
 -- require("typescript-tools").setup {}

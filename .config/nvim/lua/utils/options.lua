@@ -2,7 +2,7 @@ local opt = vim.opt
 local o = vim.o
 
 local vim_opt = {
-  cursorcolumn = true,
+  -- cursorcolumn = true,
   title = true,
   titlelen = 0, -- do not shorten title
   titlestring = 'nvim %{expand("%:p")}',
@@ -17,6 +17,8 @@ local vim_opt = {
     stl = " ",
     eob = " ",
   },
+
+  conceallevel = 1, -- for OBSIDIAN.nvim redering
 }
 
 local vim_o = {

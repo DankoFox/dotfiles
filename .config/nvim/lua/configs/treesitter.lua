@@ -12,6 +12,7 @@ local options = {
     "c",
     "cpp",
     "javascript",
+    "markdown_inline",
   },
   highlight = {
     enable = true,

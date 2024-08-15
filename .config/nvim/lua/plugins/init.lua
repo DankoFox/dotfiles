@@ -52,29 +52,7 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "black",
-        "pyright",
-        "ruff",
-
-        "clang-format",
-        "clangd",
-        "cpplint",
-        "codelldb",
-
-        "lua-language-server",
-        "stylua",
-        "luacheck",
-
-        "css-lsp",
-        "eslint_d",
-        "html-lsp",
-
-        "prettierd",
-        "tailwindcss-language-server",
-      },
-    },
+    opts = require "configs.mason",
   },
 
   {
@@ -156,22 +134,31 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
-
-  {
-    "mrcjkb/haskell-tools.nvim",
-    version = "^3", -- Recommended
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim", -- optional
-    },
-    ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
-  },
   {
     "smjonas/inc-rename.nvim",
     event = "LspAttach",
     config = function()
       require("inc_rename").setup()
     end,
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = require "configs.obsidian",
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "configs.noice"
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
   },
 }

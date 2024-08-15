@@ -1,6 +1,4 @@
-local M = {}
-
-M.mason = {
+return {
   ensure_installed = {
     "black",
     "pyright",
@@ -23,11 +21,3 @@ M.mason = {
     "tailwindcss-language-server",
   },
 }
-
-M.cmp = {
-  experimental = {
-    ghost_text = true,
-  },
-}
-
-return M

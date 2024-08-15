@@ -6,7 +6,7 @@ local highlights = require "highlights"
 -- non plugin ui configs, available without any plugins
 M.ui = {
   theme = "rosepine",
-  theme_toggle = { "rosepine", "everforest_light" },
+  theme_toggle = { "rosepine", "gruvbox_light" },
   transparency = true,
   -- lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   extended_integrations = { "todo", "trouble", "rainbowdelimiters", "dap", "lspsaga" },
@@ -79,9 +79,5 @@ M.ui = {
     },
   },
 }
-
--- M.plugins = "plugins"
-
--- M.mappings = require "mappings"
 
 return M

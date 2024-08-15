@@ -29,8 +29,25 @@ map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Saga code_actio
 map("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 map("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
-map("n", "<leader>o", "<cmd>SymbolsOutline<CR>", { desc = "Symbols Outline" })
+map("n", "<leader>so", "<cmd>SymbolsOutline<CR>", { desc = "Symbols Outline" })
 map("n", "<leader>rr", ":IncRename ")
+
+map("n", "<leader>oc", "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>", { desc = "Obsidian Check Checkbox" })
+map("n", "<leader>ot", "<cmd>ObsidianTemplate<CR>", { desc = "Insert Obsidian Template" })
+map("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open in Obsidian App" })
+map("n", "<leader>ob", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" })
+map("n", "<leader>ol", "<cmd>ObsidianLinks<CR>", { desc = "Show ObsidianLinks" })
+map("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "Create New Note" })
+map("n", "<leader>os", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian" })
+map("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", { desc = "Quick Switch" })
+
+map("n", "gf", function()
+  if require("obsidian").util.cursor_on_markdown_link() then
+    return "<cmd>ObsidianFollowLink<CR>"
+  else
+    return "gf"
+  end
+end, { noremap = false, expr = true })
 
 -- local M = {}
 --
