@@ -4,8 +4,8 @@ local options = {
     python = { "black" },
     cpp = { "clang_format" },
     sh = { "shfmt" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    css = { "prettierd" },
+    html = { "prettierd" },
   },
 
   format_on_save = {

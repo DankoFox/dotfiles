@@ -26,4 +26,5 @@ lspconfig.clangd.setup {
   end,
   capabilities = capabilities,
 }
--- require("typescript-tools").setup {}
+
+require("typescript-tools").setup {}
