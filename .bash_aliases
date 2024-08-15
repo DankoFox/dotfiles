@@ -1,9 +1,9 @@
-alias ls='exa'                                                          # ls
-alias l='exa -a'                                                # list, size, type, git
-alias ll='exa -lbF -all --icons'                                             # long list
-alias llm='exa -lbGd --sort=modified'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --color-scale -all -all --icons'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --color-scale' # all + extended list
+alias ls='eza'                                                          # ls
+alias l='eza -a'                                                # list, size, type, git
+alias ll='eza -lbF -all --icons'                                             # long list
+alias llm='eza -lbGd --sort=modified'                            # long list, modified date sort
+alias la='eza -lbhHigUmuSa --time-style=long-iso --color-scale -all -all --icons'  # all list
+alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --color-scale' # all + extended list
 
 alias pac='sudo pacman -S'   # install
 alias pacu='sudo pacman -Syu'    # update, add 'a' to the list of letters to update AUR packages if you use yaourt
