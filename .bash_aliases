@@ -4,6 +4,7 @@ alias ll='exa -lbF -all --icons'                                             # l
 alias llm='exa -lbGd --sort=modified'                            # long list, modified date sort
 alias la='exa -lbhHigUmuSa --time-style=long-iso --color-scale -all -all --icons'  # all list
 alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --color-scale' # all + extended list
+
 alias pac='sudo pacman -S'   # install
 alias pacu='sudo pacman -Syu'    # update, add 'a' to the list of letters to update AUR packages if you use yaourt
 alias pacr='sudo pacman -Rs'   # remove
@@ -13,8 +14,7 @@ alias paclo='pacman -Qdt'    # list orphans
 alias pacro='paclo && sudo pacman -Rns $(pacman -Qtdq)' # remove orphans
 alias pacc='sudo pacman -Scc'    # clean cache
 alias paclf='pacman -Ql'   # list files
-alias clock='peaclock' # clokc funni
-alias matran='cmatrix -Br -u 7'
+
 alias :q='exit'
 alias :wq='exit'
 
