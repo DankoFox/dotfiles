@@ -4,8 +4,8 @@
   border: none;
   border-radius: 0;
   font-family: "JetBrainsMono NFM ExtraBold";
-  font-weight: bold;
-  font-size: 16px;
+  /* font-weight: bold; */
+  font-size: 14px;
   min-height: 0;
 }
 
@@ -65,15 +65,14 @@ tooltip {
   background: @base;
   opacity: 0.9;
   padding: 0px 10px;
-  margin: 3px 0px;
-  margin-top: 15px;
+  margin: 0px 0px;
+  margin-top: 10px;
   border: 2px solid @pine;
 }
 
 #memory {
   color: #3e8fb0;
-  border-left: 0px;
-  border-right: 0px;
+  border-radius: 8px 0px 0px 8px;
 }
 
 #temperature {
@@ -128,7 +127,8 @@ window#waybar.empty #window {
   padding: 0px;
   margin: 0px;
   border: 0px;
-  /*  background-color: rgba(66,66,66,0.5); */ /* transparent */
+  /*  background-color: rgba(66,66,66,0.5); */
+  /* transparent */
   background-color: transparent;
 }
 

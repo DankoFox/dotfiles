@@ -35,7 +35,6 @@ alias lg lazygit
 
 alias cyclewall ~/.config/waybar/scripts/cycleWall.sh
 alias selectwall ~/.config/rofi/bin/selectBG
-alias gg++ "g++ -Wall -Werror -Wextra"
 
 command -qv nvim && alias nv nvim
 
@@ -54,7 +53,3 @@ end
 starship init fish | source
 enable_transience
 
-
-
-thefuck --alias | source
-fish_add_path /home/danko/.spicetify

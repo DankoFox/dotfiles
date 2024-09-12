@@ -5,14 +5,14 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "height": 50,
+  "height": 40,
   // "spacing": 4,
   "modules-left": ["clock", "tray", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
-    "network",
+    // "network",
     // "bluetooth",
-    "temperature",
+    // "temperature",
     "memory",
     "battery",
     "pulseaudio",
@@ -48,10 +48,10 @@
   },
 
   "clock": {
-    "format": "{: %R  %d/%m}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    // "format": "{: %I:%M %p   %a, %b %e}",
+    // "format": "{: %R  %d/%m}",
     // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "{:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
   "backlight": {
@@ -71,9 +71,9 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "{icon} {capacity}",
+    "format-charging": " {capacity}",
+    "format-plugged": " {capacity}",
     "format-alt": "{time} {icon}",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󱈑"]
   },
@@ -81,7 +81,7 @@
   "pulseaudio": {
     "format": "{icon} {volume}",
     "tooltip": false,
-    "format-muted": " ミュート",
+    "format-muted": "󰝟 ",
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "pamixer -i 5",
