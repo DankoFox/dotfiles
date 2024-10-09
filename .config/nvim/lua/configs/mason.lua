@@ -19,5 +19,6 @@ return {
 
     "prettierd",
     "tailwindcss-language-server",
+    "marksman",
   },
 }

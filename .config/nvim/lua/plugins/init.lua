@@ -89,24 +89,6 @@ return {
   },
 
   {
-    "kevinhwang91/nvim-ufo",
-    event = "VeryLazy",
-    dependencies = {
-      "kevinhwang91/promise-async",
-      {
-        "luukvbaal/statuscol.nvim",
-        opts = require "configs.statuscol",
-      },
-    },
-    opts = {
-      close_fold_kinds_for_ft = { "imports" },
-      provider_selector = function()
-        return { "treesitter", "indent" }
-      end,
-    },
-  },
-
-  {
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = {},
