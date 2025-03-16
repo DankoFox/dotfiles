@@ -45,5 +45,6 @@ It works most of the time. **TRUST ME**
 ---
 
 ![image](https://github.com/user-attachments/assets/841d12b7-64dd-4501-80b5-6a995cbeed49)
-*[Strawberry]*
+*[Strawberry](https://github.com/strawberrymusicplayer/strawberry)*: Music Player <br>
+*[Nicotine+](https://github.com/nicotine-plus/nicotine-plus): [SoulSeek](https://www.slsknet.org/news/) client to download Hi-Res musics*
 
