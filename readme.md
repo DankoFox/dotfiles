@@ -36,3 +36,14 @@ It works most of the time. **TRUST ME**
 
 ![vencord](https://github.com/user-attachments/assets/a31a815a-af25-4295-aa5b-9926bfa5b06f)
 *[Vencord, The cutest Discord client mod](https://github.com/Vendicated/Vencord)*
+
+---
+
+![anki](https://github.com/user-attachments/assets/072e611d-37ac-4159-bfda-add5d33a4b32)
+*[Anki, for Japanese flashcard](https://apps.ankiweb.net/) with [jp-mining-note](https://github.com/arbyste/jp-mining-note) template*
+
+---
+
+![image](https://github.com/user-attachments/assets/841d12b7-64dd-4501-80b5-6a995cbeed49)
+*[Strawberry]*
+
