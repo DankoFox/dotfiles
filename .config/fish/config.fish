@@ -1,4 +1,4 @@
-fish_config theme choose "Rosé Pine"
+fish_config theme choose "gruvbox"
 set fish_greeting ""
 
 set -gx TERM xterm-256color
@@ -53,3 +53,4 @@ end
 starship init fish | source
 enable_transience
 
+pyenv init - fish | source

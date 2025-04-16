@@ -11,7 +11,7 @@
     "modules-right": ["tray", "pulseaudio", "network", "memory", "temperature#cpu", "temperature#gpu", "backlight", "keyboard-state", "battery", "battery#bat2", "clock"],
       "hyprland/window": {
     "format": "{}",
-    "max-length": 40
+    "max-length": 60
   },
 
   "hyprland/workspaces": {
