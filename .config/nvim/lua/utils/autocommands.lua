@@ -39,9 +39,10 @@ autocmd("FileType", {
   desc = "Disable New Line Comment",
 })
 
+vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#83a598", fg = "#0000FF" })
 autocmd("TextYankPost", {
   callback = function()
-    require("vim.highlight").on_yank { higroup = "Visual", timeout = 200 }
+    vim.highlight.on_yank { higroup = "YankHighlight", timeout = 300 }
   end,
   group = general,
   desc = "Highlight when yanking",
