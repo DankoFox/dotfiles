@@ -1,7 +1,6 @@
 return {
   ensure_installed = {
-    "black",
-    "pyright",
+    "basedpyright",
     "ruff",
 
     "clang-format",

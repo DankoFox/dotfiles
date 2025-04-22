@@ -4,8 +4,17 @@ local options = {
     python = { "ruff_format" },
     cpp = { "clang_format" },
     sh = { "shfmt" },
-    css = { "prettierd" },
-    html = { "prettierd" },
+
+    -- webdev
+    javascript = { "biome" },
+    javascriptreact = { "biome" },
+    typescript = { "biome" },
+    typescriptreact = { "biome" },
+
+    css = { "biome" },
+    html = { "biome" },
+    json = { "biome" },
+    jsonc = { "biome" },
   },
 
   format_on_save = {

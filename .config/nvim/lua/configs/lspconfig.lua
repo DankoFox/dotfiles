@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "basedpyright", "tailwindcss", "bashls", "marksman" }
+local servers = { "html", "cssls", "basedpyright", "tailwindcss", "bashls", "marksman", "jdtls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -14,6 +14,8 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+require("java").setup()
 
 lspconfig.clangd.setup {
   cmd = {
