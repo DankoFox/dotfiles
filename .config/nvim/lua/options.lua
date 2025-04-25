@@ -5,6 +5,11 @@ require "nvchad.options"
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
 
+vim.api.nvim_create_user_command("W", "w", {})
+vim.api.nvim_create_user_command("WQ", "wq", {})
+vim.api.nvim_create_user_command("Wq", "wq", {})
+vim.api.nvim_create_user_command("Q", "q", {})
+
 local opt = vim.opt
 local o = vim.o
 
