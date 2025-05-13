@@ -15,6 +15,7 @@ return {
     "css-lsp",
     "eslint_d",
     "html-lsp",
+    "biome",
 
     "prettierd",
     "tailwindcss-language-server",

@@ -130,13 +130,9 @@ return {
   },
 
   {
-    "nvim-java/nvim-java",
-    ft = "java",
-  },
-
-  {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {},
   },
+  { import = "nvchad.blink.lazyspec" },
 }
