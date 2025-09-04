@@ -20,5 +20,6 @@ return {
     "prettierd",
     "tailwindcss-language-server",
     "marksman",
+    "typescript-language-server",
   },
 }
