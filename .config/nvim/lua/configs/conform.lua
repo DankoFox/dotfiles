@@ -4,6 +4,7 @@ local options = {
     python = { "ruff_format" },
     cpp = { "clang_format" },
     sh = { "shfmt" },
+    asm = { "asmfmt" },
 
     -- webdev
     javascript = { "biome" },

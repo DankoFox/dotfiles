@@ -1,36 +1,41 @@
--- EXAMPLE
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+-- lua/configs/lspconfig.lua (NvChad starter)
 
-local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "basedpyright", "tailwindcss", "bashls", "marksman", "gopls" }
+-- Load NvChad's default LSP setup (lua_ls, keymaps, capabilities, etc.)
+local nvlsp = require "nvchad.configs.lspconfig"
+nvlsp.defaults()
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
-end
+-- Servers that only need default config
+local servers = {
+  "html",
+  "cssls",
+  "tailwindcss",
+  "bashls",
+  "marksman",
+  "gopls",
+  "ty",
+}
 
--- require("java").setup()
+-- Enable these servers (they pick up the defaults from NvChad + nvim-lspconfig)
+vim.lsp.enable(servers)
 
-lspconfig.clangd.setup {
+-- clangd with custom flags
+vim.lsp.config("clangd", {
   cmd = {
     "clangd",
     "--offset-encoding=utf-16",
     "--enable-config",
   },
-  on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
-}
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+})
 
+vim.lsp.enable "clangd"
+
+-- TypeScript (typescript-tools plugin)
+-- This plugin still uses its own setup(), so keep it as-is but reuse NvChad callbacks
 require("typescript-tools").setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
 }

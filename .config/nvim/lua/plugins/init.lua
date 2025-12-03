@@ -75,30 +75,11 @@ return {
     },
   },
   {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {},
-    -- stylua: ignore
-    keys = {
-      { "<leader>fl", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
-      { "<leader>ft", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    },
-  },
-
-  {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
       require("nvim-surround").setup {}
-    end,
-  },
-  {
-    "max397574/better-escape.nvim",
-    config = function()
-      require("better_escape").setup {
-        mapping = { "jk" },
-      }
     end,
   },
   {
@@ -119,15 +100,15 @@ return {
   },
 
   -- add this to the file where you setup your other plugins:
-  {
-    "monkoose/neocodeium",
-    event = "VeryLazy",
-    config = function()
-      local neocodeium = require "neocodeium"
-      neocodeium.setup()
-      vim.keymap.set("i", "<A-f>", neocodeium.accept)
-    end,
-  },
+  -- {
+  --   "monkoose/neocodeium",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     local neocodeium = require "neocodeium"
+  --     neocodeium.setup()
+  --     vim.keymap.set("i", "<A-f>", neocodeium.accept)
+  --   end,
+  -- },
 
   {
     "pmizio/typescript-tools.nvim",
@@ -135,11 +116,11 @@ return {
     opts = {},
   },
   { import = "nvchad.blink.lazyspec" },
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^6", -- Recommended
-    lazy = false, -- This plugin is already lazy
-  },
+  -- {
+  --   "mrcjkb/rustaceanvim",
+  --   version = "^6", -- Recommended
+  --   lazy = false, -- This plugin is already lazy
+  -- },
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
@@ -176,5 +157,12 @@ return {
     dependencies = {
       "saghen/blink.cmp",
     },
+  },
+  {
+    "FabijanZulj/blame.nvim",
+    lazy = false,
+    config = function()
+      require("blame").setup {}
+    end,
   },
 }
